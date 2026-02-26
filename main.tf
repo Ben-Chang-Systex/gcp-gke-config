@@ -22,6 +22,7 @@ resource "google_container_cluster" "primary" {
   private_cluster_config {
     enable_private_nodes    = true             # 核心：這會讓 Node 只有 Internal IP
     enable_private_endpoint = false            # 通常設為 false，以便你從外部透過 Public Endpoint 控管 Master
+    master_ipv4_cidr_block  = "172.16.0.0/28"  # 指定給 Google 託管 Master 使用的專用網段
   }    
 }
 
