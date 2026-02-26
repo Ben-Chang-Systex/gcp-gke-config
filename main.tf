@@ -23,7 +23,12 @@ resource "google_container_cluster" "primary" {
     enable_private_nodes    = true             # 核心：這會讓 Node 只有 Internal IP
     enable_private_endpoint = false            # 通常設為 false，以便你從外部透過 Public Endpoint 控管 Master
     master_ipv4_cidr_block  = "172.16.0.0/28"  # 指定給 Google 託管 Master 使用的專用網段
-  }    
+  } 
+  # 建議加上 ip_allocation_policy 以啟用 VPC-native 模式 (Private Cluster 必要條件)
+  ip_allocation_policy {
+    cluster_ipv4_cidr_block  = "/14"
+    services_ipv4_cidr_block = "/20"
+  }   
 }
 
 
