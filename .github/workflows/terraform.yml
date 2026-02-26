@@ -28,9 +28,9 @@ jobs:
       uses: 'google-github-actions/auth@v2'
       with:
         # 請填入您的 Workload Identity Provider 完整路徑
-        workload_identity_provider: 'projects/186682394478/locations/global/workloadIdentityPools/github-pool/providers/github-network-provider'
+        workload_identity_provider: 'projects/186682394478/locations/global/workloadIdentityPools/github-pool/providers/github-infra-provider'
         # 請填入您的 Service Account Email
-        service_account: 'sa-github-network@b15d-gcplab-ben-412305.iam.gserviceaccount.com'
+        service_account: 'sa-github-infra@b15d-gcplab-ben-412305.iam.gserviceaccount.com'
 
     # --- 修改：Setup Terraform (移除 cli_config_credentials_token) ---
     - name: Setup Terraform
