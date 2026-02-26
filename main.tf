@@ -5,7 +5,6 @@ terraform {
   }
 }
 
-
 # 建立 GKE Standard 叢集 (測試用設定)
 resource "google_container_cluster" "primary" {
   name     = "my-standard-cluster"
@@ -18,7 +17,12 @@ resource "google_container_cluster" "primary" {
   # 移除預設 Node Pool，我們將自訂 Node Pool
   remove_default_node_pool = true
   initial_node_count       = 1
-  deletion_protection      = false # 允許透過 Terraform 刪除叢集 (測試環境)
+  deletion_protection      = false # 允許透過 Terraform 刪除叢集 (測試環境)    
+}
+# --- 關鍵新增部分：設定為私有叢集 ---
+  private_cluster_config {
+    enable_private_nodes    = true             # 核心：這會讓 Node 只有 Internal IP
+    enable_private_endpoint = false            # 通常設為 false，以便你從外部透過 Public Endpoint 控管 Master
 }
 
 # 建立自訂的 Node Pool
