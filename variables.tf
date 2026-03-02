@@ -40,3 +40,9 @@ variable "initial_node_count" {
   description = "每個 Zone 的初始節點數量"
   default     = 1
 }
+
+variable "pod_ipv4_cidr_block" {
+  type        = string
+  description = "分配給叢集內所有 Pod 使用的 IP 網段 (CIDR)，例如 /17 或 10.0.0.0/14"
+  default     = "pod-ranges"
+}
