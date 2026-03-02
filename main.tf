@@ -16,9 +16,9 @@ resource "google_container_cluster" "primary" {
     channel = "REGULAR"
   }
 
-  # 綁定網路團隊建立的 VPC 與 Subnet
-  network    = var.network
-  subnetwork = var.subnetwork
+# 綁定網路團隊建立的 VPC 與 Subnet
+   network    = var.network
+   subnetwork = var.subnetwork
 
 # 啟用 VPC 原生叢集 (IP Alias) 與指定 Pod IP 網段
   ip_allocation_policy {
