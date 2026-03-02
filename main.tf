@@ -22,7 +22,6 @@ resource "google_container_cluster" "primary" {
 
 # 啟用 VPC 原生叢集 (IP Alias) 與指定 Pod IP 網段
   ip_allocation_policy {
-    master_ipv4_cidr_block = "172.16.0.0/28"
     cluster_ipv4_cidr_block = "/16"
   }
 
