@@ -6,5 +6,5 @@ network            = "projects/b15d-gcplab-ben-412305/global/networks/my-test-vp
 subnetwork         = "projects/b15d-gcplab-ben-412305/regions/asia-east1/subnetworks/subnet-tw"
 machine_type       = "e2-medium"
 initial_node_count = 1
-pod_ip_range_name     = "pod-range"      # 請替換為您實際的範圍名稱
-service_ip_range_name  = "services-range"  # 請替換為您實際的範圍名稱
+pod_ip_range_name  = "pod-range"
+service_ip_range_name  = "services-range"
