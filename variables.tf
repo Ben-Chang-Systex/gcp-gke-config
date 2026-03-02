@@ -41,8 +41,12 @@ variable "initial_node_count" {
   default     = 1
 }
 
-variable "pod_ipv4_cidr_block" {
+variable "pod_ip_range_name" {
   type        = string
-  description = "分配給叢集內所有 Pod 使用的 IP 網段 (CIDR)，例如 /17 或 10.0.0.0/14"
-  default     = "pod-ranges"
+  description = "既有子網路中，預留給 Pod 使用的次要範圍名稱"
+}
+
+variable "service_ip_range_name" {
+  type        = string
+  description = "既有子網路中，預留給 Service 使用的次要範圍名稱"
 }
