@@ -5,6 +5,6 @@ cluster_version    = "1.34.3-gke.1318000"
 network            = "projects/b15d-gcplab-ben-412305/global/networks/my-test-vpc"
 subnetwork         = "projects/b15d-gcplab-ben-412305/regions/asia-east1/subnetworks/subnet-tw"
 machine_type       = "e2-medium"
-initial_node_count = 1
+initial_node_count = "1"
 pod_ip_range_name  = "pod-range"
 service_ip_range_name  = "services-range"
