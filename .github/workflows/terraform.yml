@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: read
-  id-token: write # 這是為了 GCP Workload Identity 驗證必須加的
+  id-token: write # 這是為了 GCP Workload Identity 驗證必須加的g
 
 jobs:
   terraform:
